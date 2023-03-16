@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { SiConsul } from "react-icons/si"
 import { BsPhoneVibrate } from "react-icons/bs"
 import { AiOutlineGlobal } from "react-icons/ai"
@@ -7,6 +7,25 @@ import { CgMenuGridO } from "react-icons/cg"
 import logo from "../../assets/Img/logo.png"
 
 const Navbar = () => {
+	const [active, setActive] = useState("navBarMenu")
+	const showNavbar = () => {
+		setActive("navBarMenu showNavbar")
+	}
+
+	const removeNavbar = () => {
+		setActive("navBarMenu")
+	}
+
+	const [noBg, addBg] = useState("navBarTwo")
+	const addBgColor = () => {
+		if(window.scrollY >= 10) {
+			addBg("navBarTwo navbar_With_Bg")
+		} else {
+			addBg("navBarTwo")
+		}
+	}
+	window.addEventListener("scroll", addBgColor)
+	
 	return (
 		<div className='navBar flex'>
 			<div className='navBarOne flex'>
@@ -31,26 +50,38 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			<div className='navBarTwo flex'>
+			<div className={noBg}>
 				<div className='logoDiv'>
 					<img src={logo} alt='logo' className='Logo' />
 				</div>
 
-				<div className='navBarMenu'>
+				<div className={active}>
 					<ul className='menu flex'>
-						<li className='listItem'>Home</li>
-						<li className='listItem'>O nas</li>
-						<li className='listItem'>Oferta</li>
-						<li className='listItem'>Miejsca</li>
-						<li className='listItem'>Kierunki</li>
+						<li onClick={removeNavbar} className='listItem'>
+							Home
+						</li>
+						<li onClick={removeNavbar} className='listItem'>
+							O nas
+						</li>
+						<li onClick={removeNavbar} className='listItem'>
+							Oferta
+						</li>
+						<li onClick={removeNavbar} className='listItem'>
+							Miejsca
+						</li>
+						<li onClick={removeNavbar} className='listItem'>
+							Kierunki
+						</li>
 					</ul>
 
-					<button className='btn flex btnOne'>Kontakt</button>
+					<button onClick={removeNavbar} className='btn flex btnOne'>
+						Kontakt
+					</button>
 				</div>
 
 				<button className='btn flex btnTwo'>Kontakt</button>
 
-				<div className='toggleIcon'>
+				<div onClick={showNavbar} className='toggleIcon'>
 					<CgMenuGridO className='icon' />
 				</div>
 			</div>
