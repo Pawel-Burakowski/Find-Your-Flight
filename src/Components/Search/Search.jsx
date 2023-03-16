@@ -9,15 +9,15 @@ const Search = () => {
 			<div className='sectionContainer grid'>
 				<div className='btns flex'>
 					<div className='singleBtn'>
-						<span>Economy</span>
+						<span>Klasa ekonomiczna</span>
 					</div>
 
 					<div className='singleBtn'>
-						<span>Business Class</span>
+						<span>Klasa biznes</span>
 					</div>
 
 					<div className='singleBtn'>
-						<span>First Class</span>
+						<span>Pierwsza klasa</span>
 					</div>
 				</div>
 
