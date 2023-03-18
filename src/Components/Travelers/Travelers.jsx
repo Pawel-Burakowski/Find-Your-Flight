@@ -1,14 +1,14 @@
 import React from "react"
 
 import paris from "../../assets/Img/paris.jpeg"
-/* import dubaj from "../../assets/Img/dubaj.jpeg"
+import dubaj from "../../assets/Img/dubaj.jpeg"
 import London from "../../assets/Img/Lo.jpeg"
-import NY from "../../assets/Img/NY.jpeg" */
+import NY from "../../assets/Img/NY.jpeg"
 
 import user1 from "../../assets/Img/user1.jpeg"
-/* import user2 from "../../assets/Img/user2.jpeg"
+import user2 from "../../assets/Img/user2.jpeg"
 import user3 from "../../assets/Img/user3.jpeg"
-import user4 from "../../assets/Img/user4.jpeg" */
+import user4 from "../../assets/Img/user4.jpeg"
 
 const travelers = [
 	{
@@ -17,37 +17,59 @@ const travelers = [
 		travelerImage: user1,
 		travelerName: "Marta",
 		socialLink: "@marta_n",
-	}
+	},
+	{
+		id: 2,
+		destinationImage: dubaj,
+		travelerImage: user2,
+		travelerName: "Agnieszka",
+		socialLink: "@aga_fa",
+	},
+	{
+		id: 3,
+		destinationImage: London,
+		travelerImage: user3,
+		travelerName: "Marcin",
+		socialLink: "@mar_cin",
+	},
+	{
+		id: 4,
+		destinationImage: NY,
+		travelerImage: user4,
+		travelerName: "Kamil",
+		socialLink: "@Kami_Deb",
+	},
+
 ]
 
 const Travelers = () => {
 	return (
 		<div className='travelers container section'>
 			<div className='sectionContainer'>
-				<h2>Top travelers of this month!</h2>
+				<h2>Najlepsze kierunki w tym miesiącu!</h2>
 
 				<div className='travelersContainer grid'>
-					{travelers.map(
-						(id, destinationImage, travelerImage, travelerName, socialLink) => {
-							return (        /* NIE DZIAŁA WCZYTYWANIE OBRAZKÓW!?!?! */
+					{
+					travelers.map(({id, destinationImage, travelerImage, travelerName, socialLink}) => {
+							return (
 								<div key={id} className='singleTraveler'>
 									<img
-										src={paris}
+										src={destinationImage}
 										alt=''
 										className='destinationImage'
 									/>
 									<div className='travelerDetails'>
 										<div className='travelerPicture'>
 											<img
-												src={user1}
+												src={travelerImage}
 												alt=''
 												className='travelerImage'
 											/>
 										</div>
 
 										<div className='travelerName'>
-											<span>Marta</span>
-											<p>@marta_n</p>
+											<span>{travelerName}</span>
+											<p>{socialLink}</p>
 										</div>
 									</div>
 								</div>

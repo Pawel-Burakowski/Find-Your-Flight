@@ -6,6 +6,8 @@ import Support from "./Components/Support/Support"
 import Info from "./Components/Info/Info"
 import Lounge from "./Components/Lounge/Lounge"
 import Travelers from "./Components/Travelers/Travelers"
+import Subscribe from "./Components/Subscribe/Subscribe"
+import Footer from "./Components/Footer/Footer"
 
 const App = () => {
 	return (
@@ -17,6 +19,8 @@ const App = () => {
 			<Info />
 			<Lounge />
 			<Travelers />
+			<Subscribe />
+			<Footer />
 		</div>
 	)
 }

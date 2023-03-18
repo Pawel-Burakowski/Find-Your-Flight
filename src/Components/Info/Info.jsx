@@ -1,16 +1,25 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import { RxCalendar } from "react-icons/rx"
 import { BsShieldCheck, BsBookmarkCheck } from "react-icons/bs"
 
+import Aos from "aos"
+import "aos/dist/aos.css"
+
 const Info = () => {
+
+    useEffect(() => {
+		Aos.init({duration: 2000})
+	}, [])
+
+
     return (
         <div className="info section">
             <div className="infoContainer container">
 
                 <div className="titleDiv flex">
-                    <h2>Podróżować to żyć</h2>
-                    <button className="btn">
+                    <h2 data-aos="fade-zoom-in" data-aos-duration="2500" >Podróżować to żyć</h2>
+                    <button data-aos="fade-zoom-in" data-aos-duration="2500" className="btn">
                         Zobacz
                     </button>
                 </div>
@@ -42,7 +51,6 @@ const Info = () => {
                     </div>
 
                 </div>
-
 
             </div>
         </div>
